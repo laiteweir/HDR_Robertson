@@ -8,9 +8,9 @@ args = parser.parse_args()
 
 if __name__ == '__main__':
     P = args.numpictures
-    images = [cv.imread(f"./scene_3/{j}.jpg") for j in range(1, P+1)]
+    images = [cv.imread(f"./images/{j}.png") for j in range(1, P+1)]
     images_out = []
     for j in range(P):
         images_out.append(cv.resize(images[j], (900, 600), interpolation=cv.INTER_AREA))
     for j in range(1, P+1):
-        cv.imwrite(f'./temp3/{j}.png', images_out[j-1])
+        cv.imwrite(f'./temp/{j}.png', images_out[j-1])
